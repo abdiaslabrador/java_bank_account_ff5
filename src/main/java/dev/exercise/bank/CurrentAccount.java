@@ -1,4 +1,4 @@
-package main.java.dev.exercise.bank;
+package dev.exercise.bank;
 
 public class CurrentAccount extends BankAccount{
     private double overdraft;
@@ -19,10 +19,10 @@ public class CurrentAccount extends BankAccount{
 
     public void consign(float money) {
         this.account_balance += money;
-        if(money >= overdraft){
+        if((money + overdraft) >=0 ){
             overdraft = 0;
         }else{
-            overdraft -= money;
+            overdraft += money;
         }
         this.numb_consignments++;
     }
@@ -32,5 +32,9 @@ public class CurrentAccount extends BankAccount{
         System.out.println("Numero de transacciones: " + (this.numb_consignments + this.numb_withdrawal));
         System.out.println("Comision mensual: " + this.monthly_commission);
         System.out.println("Sobregiro: " + this.overdraft);
+    }
+
+    public double getOverdraft() {
+        return overdraft;
     }
 }

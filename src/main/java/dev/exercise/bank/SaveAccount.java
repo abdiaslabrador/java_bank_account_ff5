@@ -1,4 +1,4 @@
-package main.java.dev.exercise.bank;
+package dev.exercise.bank;
 
 public class SaveAccount extends BankAccount {
     private boolean active = true;
@@ -19,7 +19,7 @@ public class SaveAccount extends BankAccount {
         if (active == true) {
             if (money <= account_balance) {
                 this.account_balance -= money;
-                this.numb_money_withdrawal++;
+                this.numb_withdrawal++;
                 isActive();
             }
         }

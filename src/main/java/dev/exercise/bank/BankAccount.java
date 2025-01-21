@@ -1,11 +1,11 @@
-package main.java.dev.exercise.bank;
+package dev.exercise.bank;
 
 public class BankAccount {
     protected double account_balance; //saldo
     protected int numb_consignments = 0; //consignaciones
     protected int numb_withdrawal = 0; //retiro
     protected float anual_tax_percentage; //porcentaje de impuesto anual
-    protected float monthly_commission = 0.00; //comision mensual
+    protected float monthly_commission = 0; //comision mensual
 
     public BankAccount(double account_balance, float anual_tax_percentage) {
         this.account_balance = account_balance;
@@ -51,6 +51,10 @@ public class BankAccount {
 
     public float getMonthlyCommission() {
         return monthly_commission;
+    }
+
+    public void setMonthlyCommission(float commission) {
+        this.monthly_commission = commission;
     }
 
 }
